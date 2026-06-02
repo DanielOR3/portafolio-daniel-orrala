@@ -8,9 +8,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-tu-clave-secreta-aqui'  # ← Puedes dejarla así por ahora
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # ==================== APPS ====================
 INSTALLED_APPS = [
@@ -70,6 +70,11 @@ USE_TZ = True
 
 # ==================== ARCHIVOS ESTÁTICOS Y MEDIA ====================
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'          # ← Importante para Render
+STATICFILES_DIRS = [
+    BASE_DIR / 'core/static',                   # ← Tus archivos estáticos
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
