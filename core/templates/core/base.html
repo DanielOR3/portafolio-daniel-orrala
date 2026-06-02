@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ingeniero en Tecnologías de la Información | Soporte Técnico Nivel 2, Linux, Automatización y Cloud. Portafolio profesional de Daniel Orrala.">
+    <meta name="keywords" content="Ingeniero TI, Soporte Técnico, Linux, AWS, Zabbix, ITIL, Ecuador">
+    <meta name="author" content="Daniel Andrés Orrala Ramírez">
+
+    <title>{% block title %}Daniel Orrala - Ingeniero en TI{% endblock %}</title>
+    
+    <!-- Favicon -->
+    {% load static %}
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+
+    :root {
+        --bg-color: #f8fafc;
+        --text-color: #1e2937;
+        --card-bg: #ffffff;
+        --muted-color: #64748b;
+        --section-bg: #ffffff;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0f172a;
+        --text-color: #e2e8f0;
+        --card-bg: #334155;
+        --muted-color: #94a3b8;
+        --section-bg: #1e2937;
+    }
+
+    body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        transition: all .3s ease;
+    }
+
+    /* HERO */
+
+    .hero {
+        background: linear-gradient(
+            135deg,
+            #0d6efd 0%,
+            #6610f2 100%
+        );
+        color: white;
+        padding: 160px 0 120px;
+    }
+
+    .hero h1,
+    .hero h2,
+    .hero h3,
+    .hero h4,
+    .hero h5,
+    .hero h6,
+    .hero p {
+        color: white !important;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+        background-color: rgba(255,255,255,.97) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        transition: all .3s ease;
+    }
+
+    [data-theme="dark"] .navbar {
+        background-color: rgba(15,23,42,.97) !important;
+    }
+
+    .navbar-brand,
+    .nav-link {
+        color: var(--text-color) !important;
+    }
+
+    .nav-link:hover {
+        color: #0d6efd !important;
+    }
+
+    /* CARDS */
+
+    .card {
+        background-color: var(--card-bg) !important;
+        color: var(--text-color);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        transition: all .3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,.15) !important;
+    }
+
+    .card-body {
+        color: var(--text-color);
+    }
+
+    /* TEXTOS */
+
+    .text-muted {
+        color: var(--muted-color) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-color);
+    }
+
+    /* TITULOS */
+
+    .section-title {
+        position: relative;
+        display: inline-block;
+        color: var(--text-color);
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 4px;
+        background: linear-gradient(
+            to right,
+            #0d6efd,
+            #6610f2
+        );
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* SECCIONES */
+
+    .bg-light {
+        background-color: var(--section-bg) !important;
+    }
+
+    /* BOTON TEMA */
+
+    #theme-toggle {
+        color: var(--text-color);
+        border-color: var(--text-color);
+    }
+
+    #theme-toggle:hover {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+    }
+
+    /* MENU MOVIL */
+
+    .navbar-toggler {
+        border-color: var(--text-color);
+    }
+
+    .navbar-toggler-icon {
+        filter: brightness(0);
+    }
+
+    [data-theme="dark"] .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+</style>
+</head>
+
+<body data-theme="dark">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="/">
+                Daniel Orrala
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre mí</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#educacion">Educación</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiencia">Experiencia</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificaciones">Certificaciones</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+
+                        <button id="theme-toggle"
+                                class="btn btn-outline-secondary btn-sm">
+
+                            <i class="bi bi-moon-fill"></i>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const toggleButton =
+                document.getElementById('theme-toggle');
+
+            const body = document.body;
+
+            const savedTheme =
+                localStorage.getItem('theme') || 'dark';
+
+            body.setAttribute(
+                'data-theme',
+                savedTheme
+            );
+
+            updateIcon(savedTheme);
+
+            toggleButton.addEventListener('click', () => {
+
+                const currentTheme =
+                    body.getAttribute('data-theme');
+
+                const newTheme =
+                    currentTheme === 'dark'
+                    ? 'light'
+                    : 'dark';
+
+                body.setAttribute(
+                    'data-theme',
+                    newTheme
+                );
+
+                localStorage.setItem(
+                    'theme',
+                    newTheme
+                );
+
+                updateIcon(newTheme);
+
+            });
+
+            function updateIcon(theme) {
+
+                toggleButton.innerHTML =
+                    theme === 'dark'
+                    ? '<i class="bi bi-moon-fill"></i>'
+                    : '<i class="bi bi-sun-fill"></i>';
+
+            }
+
+        });
+
+    </script>
+
+
+    <!-- Animaciones con AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Inicializar AOS
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+
+            // Scroll suave para los enlaces del navbar
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Footer -->
+    <footer class="py-5 mt-5" style="background-color: var(--card-bg); border-top: 1px solid rgba(0,0,0,0.1);">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2026 Daniel Andrés Orrala Ramírez</p>
+            <p class="text-muted small">Ingeniero en Tecnologías de la Información</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
